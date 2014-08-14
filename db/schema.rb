@@ -14,11 +14,15 @@
 ActiveRecord::Schema.define(version: 20140812072319) do
 
   create_table "feed_contents", force: true do |t|
+    t.integer  "feed_id",        null: false
     t.string   "title"
+    t.text     "summary"
     t.text     "content"
     t.datetime "time"
+    t.string   "tags_by_origin"
     t.string   "tags"
     t.string   "link"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
