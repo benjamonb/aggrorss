@@ -3,7 +3,10 @@ class Feed < ActiveRecord::Base
   attr_accessor :news
 
   def self.fetch_parse_all
-
+    Feed.all.each do |single_feed|
+      single_feed.fetch_feed
+      single_feed.parse_feed
+    end
   end
 
   def fetch_feed
